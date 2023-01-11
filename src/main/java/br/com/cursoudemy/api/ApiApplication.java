@@ -1,6 +1,6 @@
 package br.com.cursoudemy.api;
 
-import br.com.cursoudemy.api.domain.User;
+import br.com.cursoudemy.api.domain.Users;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,5 +11,5 @@ public class ApiApplication {
         SpringApplication.run(ApiApplication.class, args);
     }
 
-    User user = new User(1,"Rachel", "email@gmail.com","123");
+    Users user = new Users(1,"Rachel", "email@gmail.com","123");
 }
