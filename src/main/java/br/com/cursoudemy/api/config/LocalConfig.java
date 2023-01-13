@@ -12,16 +12,15 @@ import java.util.List;
 @Configuration
 @Profile("local")
 public class LocalConfig {
-
     @Autowired
     private UserRepository repository;
-
     @Bean
     public void startDB() {
         Users u1 = new Users(null, "Rachel", "email@gmail.com", "123");
         Users u2 = new Users(null, "Maria", "maria@gmail.com", "456");
+        Users u3 = new Users(null, "Joao", "joao@gmail.com", "456");
 
-        repository.saveAll(List.of(u1, u2));
+        repository.saveAll(List.of(u1, u2, u3));
     }
 
 }
