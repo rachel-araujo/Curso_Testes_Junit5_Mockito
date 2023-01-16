@@ -1,16 +1,20 @@
 package br.com.cursoudemy.api.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Setter @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UsersDTO {
-    @Setter @Getter
-    @AllArgsConstructor
-    @NoArgsConstructor
+
     private Integer id;
     private String name;
     private String email;
-    private String password;
+        @JsonIgnore
+        private String password;
+
 }
