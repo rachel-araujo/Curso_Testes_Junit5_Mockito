@@ -21,7 +21,8 @@ public class UserResource {
     private UserService service;
     @GetMapping(value = "/{id}")
     public ResponseEntity<UsersDTO> findById(@PathVariable Integer id) {
-        return ResponseEntity.ok().body(mapper.map(service.findById(id), UsersDTO.class));
+        return ResponseEntity.ok()
+                .body(mapper.map(service.findById(id), UsersDTO.class));
     }
     @GetMapping
     public ResponseEntity<List<UsersDTO>> findAll() {

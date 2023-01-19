@@ -11,6 +11,10 @@ import org.mockito.MockitoAnnotations;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.when;
+
 @SpringBootTest
 class UserResourceTest {
 
@@ -38,7 +42,10 @@ class UserResourceTest {
     }
 
     @Test
-    void findById() {
+    void whenFindByIdThenReturnSuccess() {
+        when(service.findById(anyInt())).thenReturn(users);
+        when(mapper.map(any(), any())).thenReturn(usersDTO);
+
     }
 
     @Test
